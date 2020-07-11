@@ -20,6 +20,7 @@
 		DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F443324B9EF2600A82A1C /* APIImage.swift */; };
 		DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */; };
 		DD4F443F24B9F81200A82A1C /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4F443E24B9F81200A82A1C /* credentials.json */; };
+		DD4F444124B9FC4700A82A1C /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F444024B9FC4700A82A1C /* APICredentials.swift */; };
 		DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */; };
 		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		DD4F443324B9EF2600A82A1C /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		DD4F443E24B9F81200A82A1C /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
+		DD4F444024B9FC4700A82A1C /* APICredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentials.swift; sourceTree = "<group>"; };
 		DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		DD5D93D324B9DF1A00E45ED0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +161,7 @@
 			children = (
 				DD3CFE3324B9D80A0091BDA3 /* Networking.swift */,
 				DD3CFE3524B9D8450091BDA3 /* Endpoint.swift */,
+				DD4F444024B9FC4700A82A1C /* APICredentials.swift */,
 				DD3CFE3724B9D8F40091BDA3 /* API.swift */,
 			);
 			path = Networking;
@@ -289,6 +292,7 @@
 				DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */,
 				DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */,
 				DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */,
+				DD4F444124B9FC4700A82A1C /* APICredentials.swift in Sources */,
 				DD3CFE3624B9D8450091BDA3 /* Endpoint.swift in Sources */,
 				DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */,
 			);

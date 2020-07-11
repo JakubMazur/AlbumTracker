@@ -51,8 +51,3 @@ enum Endpoint {
 		return try? JSONDecoder().decode(APICredentials.self, from: data)
 	}
 }
-
-struct APICredentials: Decodable {
-	let key: String
-	let secret: String
-}
