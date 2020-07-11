@@ -11,23 +11,18 @@
 		DD3CFE0824B9D3350091BDA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE0724B9D3350091BDA3 /* ContentView.swift */; };
 		DD3CFE0A24B9D3360091BDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3CFE0924B9D3360091BDA3 /* Assets.xcassets */; };
 		DD3CFE0D24B9D3360091BDA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3CFE0C24B9D3360091BDA3 /* Preview Assets.xcassets */; };
-		DD3CFE1824B9D3360091BDA3 /* AlbumTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE1724B9D3360091BDA3 /* AlbumTrackerTests.swift */; };
-		DD3CFE2324B9D3360091BDA3 /* AlbumTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE2224B9D3360091BDA3 /* AlbumTrackerUITests.swift */; };
 		DD3CFE3124B9D7E50091BDA3 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3024B9D7E50091BDA3 /* URLRequest+Extensions.swift */; };
 		DD3CFE3424B9D80A0091BDA3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3324B9D80A0091BDA3 /* Networking.swift */; };
 		DD3CFE3624B9D8450091BDA3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3524B9D8450091BDA3 /* Endpoint.swift */; };
 		DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3724B9D8F40091BDA3 /* API.swift */; };
+		DD3CFE3B24B9DA5C0091BDA3 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3A24B9DA5C0091BDA3 /* APITests.swift */; };
+		DD3CFE3D24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */; };
+		DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */; };
+		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DD3CFE1424B9D3360091BDA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD3CFDFA24B9D3350091BDA3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD3CFE0124B9D3350091BDA3;
-			remoteInfo = AlbumTracker;
-		};
-		DD3CFE1F24B9D3360091BDA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD3CFDFA24B9D3350091BDA3 /* Project object */;
 			proxyType = 1;
@@ -44,15 +39,16 @@
 		DD3CFE0C24B9D3360091BDA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DD3CFE0E24B9D3360091BDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3CFE1324B9D3360091BDA3 /* AlbumTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD3CFE1724B9D3360091BDA3 /* AlbumTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackerTests.swift; sourceTree = "<group>"; };
 		DD3CFE1924B9D3360091BDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD3CFE1E24B9D3360091BDA3 /* AlbumTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD3CFE2224B9D3360091BDA3 /* AlbumTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackerUITests.swift; sourceTree = "<group>"; };
-		DD3CFE2424B9D3360091BDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3CFE3024B9D7E50091BDA3 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		DD3CFE3324B9D80A0091BDA3 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DD3CFE3524B9D8450091BDA3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		DD3CFE3724B9D8F40091BDA3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DD3CFE3924B9DA5C0091BDA3 /* AlbumTrackerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlbumTrackerTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD3CFE3A24B9DA5C0091BDA3 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensionsTests.swift; sourceTree = "<group>"; };
+		DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		DD5D93D324B9DF1A00E45ED0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD3CFE1B24B9D3360091BDA3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +74,6 @@
 			children = (
 				DD3CFE0424B9D3350091BDA3 /* AlbumTracker */,
 				DD3CFE1624B9D3360091BDA3 /* AlbumTrackerTests */,
-				DD3CFE2124B9D3360091BDA3 /* AlbumTrackerUITests */,
 				DD3CFE0324B9D3350091BDA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +83,6 @@
 			children = (
 				DD3CFE0224B9D3350091BDA3 /* AlbumTracker.app */,
 				DD3CFE1324B9D3360091BDA3 /* AlbumTrackerTests.xctest */,
-				DD3CFE1E24B9D3360091BDA3 /* AlbumTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,8 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				DD3CFE3224B9D7EE0091BDA3 /* Extensions */,
+				DD5D93CF24B9DCF100E45ED0 /* Networking */,
 				DD3CFE0524B9D3350091BDA3 /* AlbumTrackerApp.swift */,
 				DD3CFE0724B9D3350091BDA3 /* ContentView.swift */,
+				DD5D93D524B9DF1E00E45ED0 /* Artist */,
 				DD3CFE0924B9D3360091BDA3 /* Assets.xcassets */,
 				DD3CFE0E24B9D3360091BDA3 /* Info.plist */,
 				DD3CFE0B24B9D3360091BDA3 /* Preview Content */,
@@ -124,30 +113,55 @@
 		DD3CFE1624B9D3360091BDA3 /* AlbumTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD3CFE1724B9D3360091BDA3 /* AlbumTrackerTests.swift */,
+				DD5D93D224B9DD7200E45ED0 /* Networking */,
+				DD3CFE3E24B9DAFA0091BDA3 /* Extensions */,
 				DD3CFE1924B9D3360091BDA3 /* Info.plist */,
+				DD3CFE3A24B9DA5C0091BDA3 /* APITests.swift */,
+				DD3CFE3924B9DA5C0091BDA3 /* AlbumTrackerTests-Bridging-Header.h */,
 			);
 			path = AlbumTrackerTests;
-			sourceTree = "<group>";
-		};
-		DD3CFE2124B9D3360091BDA3 /* AlbumTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DD3CFE2224B9D3360091BDA3 /* AlbumTrackerUITests.swift */,
-				DD3CFE2424B9D3360091BDA3 /* Info.plist */,
-			);
-			path = AlbumTrackerUITests;
 			sourceTree = "<group>";
 		};
 		DD3CFE3224B9D7EE0091BDA3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DD3CFE3024B9D7E50091BDA3 /* URLRequest+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD3CFE3E24B9DAFA0091BDA3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD5D93CF24B9DCF100E45ED0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
 				DD3CFE3324B9D80A0091BDA3 /* Networking.swift */,
 				DD3CFE3524B9D8450091BDA3 /* Endpoint.swift */,
 				DD3CFE3724B9D8F40091BDA3 /* API.swift */,
 			);
-			path = Extensions;
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DD5D93D224B9DD7200E45ED0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DD5D93D524B9DF1E00E45ED0 /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				DD5D93D324B9DF1A00E45ED0 /* Artist.swift */,
+			);
+			path = Artist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,24 +202,6 @@
 			productReference = DD3CFE1324B9D3360091BDA3 /* AlbumTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DD3CFE1D24B9D3360091BDA3 /* AlbumTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD3CFE2D24B9D3360091BDA3 /* Build configuration list for PBXNativeTarget "AlbumTrackerUITests" */;
-			buildPhases = (
-				DD3CFE1A24B9D3360091BDA3 /* Sources */,
-				DD3CFE1B24B9D3360091BDA3 /* Frameworks */,
-				DD3CFE1C24B9D3360091BDA3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD3CFE2024B9D3360091BDA3 /* PBXTargetDependency */,
-			);
-			name = AlbumTrackerUITests;
-			productName = AlbumTrackerUITests;
-			productReference = DD3CFE1E24B9D3360091BDA3 /* AlbumTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,10 +216,7 @@
 					};
 					DD3CFE1224B9D3360091BDA3 = {
 						CreatedOnToolsVersion = 12.0;
-						TestTargetID = DD3CFE0124B9D3350091BDA3;
-					};
-					DD3CFE1D24B9D3360091BDA3 = {
-						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 						TestTargetID = DD3CFE0124B9D3350091BDA3;
 					};
 				};
@@ -243,7 +236,6 @@
 			targets = (
 				DD3CFE0124B9D3350091BDA3 /* AlbumTracker */,
 				DD3CFE1224B9D3360091BDA3 /* AlbumTrackerTests */,
-				DD3CFE1D24B9D3360091BDA3 /* AlbumTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,13 +257,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DD3CFE1C24B9D3360091BDA3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,6 +270,7 @@
 				DD3CFE3424B9D80A0091BDA3 /* Networking.swift in Sources */,
 				DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */,
 				DD3CFE3624B9D8450091BDA3 /* Endpoint.swift in Sources */,
+				DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,15 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD3CFE1824B9D3360091BDA3 /* AlbumTrackerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD3CFE1A24B9D3360091BDA3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DD3CFE2324B9D3360091BDA3 /* AlbumTrackerUITests.swift in Sources */,
+				DD3CFE3B24B9DA5C0091BDA3 /* APITests.swift in Sources */,
+				DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */,
+				DD3CFE3D24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,11 +291,6 @@
 			isa = PBXTargetDependency;
 			target = DD3CFE0124B9D3350091BDA3 /* AlbumTracker */;
 			targetProxy = DD3CFE1424B9D3360091BDA3 /* PBXContainerItemProxy */;
-		};
-		DD3CFE2024B9D3360091BDA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD3CFE0124B9D3350091BDA3 /* AlbumTracker */;
-			targetProxy = DD3CFE1F24B9D3360091BDA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -485,6 +460,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M66FT576JY;
 				INFOPLIST_FILE = AlbumTrackerTests/Info.plist;
@@ -496,6 +472,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlbumTrackerTests/AlbumTrackerTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumTracker.app/AlbumTracker";
@@ -507,6 +485,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M66FT576JY;
 				INFOPLIST_FILE = AlbumTrackerTests/Info.plist;
@@ -518,49 +497,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AlbumTrackerTests/AlbumTrackerTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumTracker.app/AlbumTracker";
-			};
-			name = Release;
-		};
-		DD3CFE2E24B9D3360091BDA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M66FT576JY;
-				INFOPLIST_FILE = AlbumTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AlbumTracker;
-			};
-			name = Debug;
-		};
-		DD3CFE2F24B9D3360091BDA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M66FT576JY;
-				INFOPLIST_FILE = AlbumTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AlbumTracker;
 			};
 			name = Release;
 		};
@@ -590,15 +530,6 @@
 			buildConfigurations = (
 				DD3CFE2B24B9D3360091BDA3 /* Debug */,
 				DD3CFE2C24B9D3360091BDA3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DD3CFE2D24B9D3360091BDA3 /* Build configuration list for PBXNativeTarget "AlbumTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DD3CFE2E24B9D3360091BDA3 /* Debug */,
-				DD3CFE2F24B9D3360091BDA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
