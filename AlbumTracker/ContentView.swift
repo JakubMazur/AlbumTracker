@@ -15,7 +15,7 @@ struct ContentView: View {
 			HStack {
 				VStack(alignment: .leading) {
 					Text(artist.name).font(.headline).foregroundColor(.primary)
-					Text(artist.realname).font(.subheadline).foregroundColor(.primary)
+					Text(artist.realName).font(.subheadline).foregroundColor(.primary)
 					Text(artist.profile).font(.body).foregroundColor(.secondary).padding(.top)
 				}
 			}

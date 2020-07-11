@@ -17,6 +17,9 @@
 		DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3724B9D8F40091BDA3 /* API.swift */; };
 		DD3CFE3B24B9DA5C0091BDA3 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3A24B9DA5C0091BDA3 /* APITests.swift */; };
 		DD3CFE3D24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */; };
+		DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F443324B9EF2600A82A1C /* APIImage.swift */; };
+		DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */; };
+		DD4F443F24B9F81200A82A1C /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4F443E24B9F81200A82A1C /* credentials.json */; };
 		DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */; };
 		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,9 @@
 		DD3CFE3924B9DA5C0091BDA3 /* AlbumTrackerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlbumTrackerTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD3CFE3A24B9DA5C0091BDA3 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensionsTests.swift; sourceTree = "<group>"; };
+		DD4F443324B9EF2600A82A1C /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
+		DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		DD4F443E24B9F81200A82A1C /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		DD5D93D324B9DF1A00E45ED0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,7 @@
 		DD3CFE0424B9D3350091BDA3 /* AlbumTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DD4F443D24B9F81200A82A1C /* private */,
 				DD3CFE3224B9D7EE0091BDA3 /* Extensions */,
 				DD5D93CF24B9DCF100E45ED0 /* Networking */,
 				DD3CFE0524B9D3350091BDA3 /* AlbumTrackerApp.swift */,
@@ -126,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3CFE3024B9D7E50091BDA3 /* URLRequest+Extensions.swift */,
+				DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +144,14 @@
 				DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD4F443D24B9F81200A82A1C /* private */ = {
+			isa = PBXGroup;
+			children = (
+				DD4F443E24B9F81200A82A1C /* credentials.json */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 		DD5D93CF24B9DCF100E45ED0 /* Networking */ = {
@@ -160,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DD5D93D324B9DF1A00E45ED0 /* Artist.swift */,
+				DD4F443324B9EF2600A82A1C /* APIImage.swift */,
 			);
 			path = Artist;
 			sourceTree = "<group>";
@@ -245,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4F443F24B9F81200A82A1C /* credentials.json in Resources */,
 				DD3CFE0D24B9D3360091BDA3 /* Preview Assets.xcassets in Resources */,
 				DD3CFE0A24B9D3360091BDA3 /* Assets.xcassets in Resources */,
 			);
@@ -268,6 +286,8 @@
 				DD3CFE0824B9D3350091BDA3 /* ContentView.swift in Sources */,
 				DD3CFE0624B9D3350091BDA3 /* AlbumTrackerApp.swift in Sources */,
 				DD3CFE3424B9D80A0091BDA3 /* Networking.swift in Sources */,
+				DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */,
+				DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */,
 				DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */,
 				DD3CFE3624B9D8450091BDA3 /* Endpoint.swift in Sources */,
 				DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */,
@@ -426,6 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -448,6 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.jkmazur.AlbumTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

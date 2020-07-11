@@ -35,6 +35,24 @@ enum Endpoint {
 	}
 	
 	var request: URLRequest? {
-		return URLRequest(url: self.url)
+		var request = URLRequest(url: self.url)
+		request?.setValue("AlbumTracker/0.1 +https://kettu.pl", forHTTPHeaderField: "User-Agent")
+		if let credentials = self.credentials() {
+			request?.setValue("Discogs key=\(credentials.key), secret=\(credentials.secret)", forHTTPHeaderField: "Authorization")
+		}
+		return request
 	}
+	
+	private func credentials() -> APICredentials? {
+		guard let credentialFilePath = Bundle.main.path(forResource: "credentials", ofType: "json"),
+			  let data = try? Data(contentsOf: URL(fileURLWithPath: credentialFilePath)) else {
+			return nil
+		}
+		return try? JSONDecoder().decode(APICredentials.self, from: data)
+	}
+}
+
+struct APICredentials: Decodable {
+	let key: String
+	let secret: String
 }
