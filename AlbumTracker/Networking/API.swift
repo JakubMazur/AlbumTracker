@@ -7,12 +7,16 @@
 
 import Foundation
 
-protocol API: Decodable {
-	static var endpoint: Endpoint { get }
+protocol API: Decodable { }
+
+extension API {
+	static var session: URLSession {
+		return URLSession.shared
+	}
 }
 
 extension API {
-	static func fetch(_ completion: @escaping(Result<Self,Error>) -> Void) {
+	static func fetch(endpoint: Endpoint, _ completion: @escaping(Result<Self,Error>) -> Void)  {
 		var completionHandler: Result<Self,Error> = .failure(NSError.networkingDefault) {
 			didSet {
 				DispatchQueue.main.async {
@@ -20,7 +24,7 @@ extension API {
 				}
 			}
 		}
-		Self.fetch(self.endpoint) { (result) in
+		Self.fetch(endpoint) { (result) in
 			switch result {
 			case .success(let data):
 				do {
@@ -47,8 +51,7 @@ extension API {
 			result = .failure(NSError.notValidEndpoint)
 			return
 		}
-		let session: URLSession = URLSession(configuration: .default)
-		let dataTask = session.dataTask(with: request) { (data, response, error) in
+		let dataTask = self.session.dataTask(with: request) { (data, response, error) in
 			guard let data = data else {
 				result = .failure(NSError.requestEmptyData)
 				return

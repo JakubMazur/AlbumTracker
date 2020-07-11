@@ -21,8 +21,10 @@
 		DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */; };
 		DD4F443F24B9F81200A82A1C /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4F443E24B9F81200A82A1C /* credentials.json */; };
 		DD4F444124B9FC4700A82A1C /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F444024B9FC4700A82A1C /* APICredentials.swift */; };
+		DD4F444324B9FE7600A82A1C /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4F444224B9FE7600A82A1C /* AsyncImageView.swift */; };
 		DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */; };
 		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
+		DDC3C4F424BB3F12009C5BFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +57,10 @@
 		DD4F443524B9F2EF00A82A1C /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		DD4F443E24B9F81200A82A1C /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		DD4F444024B9FC4700A82A1C /* APICredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentials.swift; sourceTree = "<group>"; };
+		DD4F444224B9FE7600A82A1C /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		DD5D93D324B9DF1A00E45ED0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +107,10 @@
 				DD5D93CF24B9DCF100E45ED0 /* Networking */,
 				DD3CFE0524B9D3350091BDA3 /* AlbumTrackerApp.swift */,
 				DD3CFE0724B9D3350091BDA3 /* ContentView.swift */,
-				DD5D93D524B9DF1E00E45ED0 /* Artist */,
+				DD4F444624B9FED500A82A1C /* AsyncImage */,
+				DD5D93D524B9DF1E00E45ED0 /* Model */,
 				DD3CFE0924B9D3360091BDA3 /* Assets.xcassets */,
+				DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */,
 				DD3CFE0E24B9D3360091BDA3 /* Info.plist */,
 				DD3CFE0B24B9D3360091BDA3 /* Preview Content */,
 			);
@@ -156,6 +162,14 @@
 			path = private;
 			sourceTree = "<group>";
 		};
+		DD4F444624B9FED500A82A1C /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				DD4F444224B9FE7600A82A1C /* AsyncImageView.swift */,
+			);
+			path = AsyncImage;
+			sourceTree = "<group>";
+		};
 		DD5D93CF24B9DCF100E45ED0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,13 +189,13 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		DD5D93D524B9DF1E00E45ED0 /* Artist */ = {
+		DD5D93D524B9DF1E00E45ED0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DD5D93D324B9DF1A00E45ED0 /* Artist.swift */,
 				DD4F443324B9EF2600A82A1C /* APIImage.swift */,
 			);
-			path = Artist;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,8 @@
 			dependencies = (
 			);
 			name = AlbumTracker;
+			packageProductDependencies = (
+			);
 			productName = AlbumTracker;
 			productReference = DD3CFE0224B9D3350091BDA3 /* AlbumTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +266,8 @@
 				Base,
 			);
 			mainGroup = DD3CFDF924B9D3350091BDA3;
+			packageReferences = (
+			);
 			productRefGroup = DD3CFE0324B9D3350091BDA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F443F24B9F81200A82A1C /* credentials.json in Resources */,
+				DDC3C4F424BB3F12009C5BFE /* Colors.xcassets in Resources */,
 				DD3CFE0D24B9D3360091BDA3 /* Preview Assets.xcassets in Resources */,
 				DD3CFE0A24B9D3360091BDA3 /* Assets.xcassets in Resources */,
 			);
@@ -290,6 +309,7 @@
 				DD3CFE0624B9D3350091BDA3 /* AlbumTrackerApp.swift in Sources */,
 				DD3CFE3424B9D80A0091BDA3 /* Networking.swift in Sources */,
 				DD4F443624B9F2EF00A82A1C /* URL+Extensions.swift in Sources */,
+				DD4F444324B9FE7600A82A1C /* AsyncImageView.swift in Sources */,
 				DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */,
 				DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */,
 				DD4F444124B9FC4700A82A1C /* APICredentials.swift in Sources */,
