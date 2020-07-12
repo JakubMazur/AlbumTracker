@@ -12,7 +12,7 @@ enum Endpoint {
 	case artist(Int)
 	case album(Int)
 	case subpath(String)
-	case custom(String)
+	case custom(String?)
 	
 	private var relative: String? {
 		switch self {
@@ -37,6 +37,7 @@ enum Endpoint {
 	var request: URLRequest? {
 		var request = URLRequest(url: self.url)
 		request?.setValue("AlbumTracker/0.1 +https://kettu.pl", forHTTPHeaderField: "User-Agent")
+		request?.setValue("application/vnd.discogs.v2.plaintext+json", forHTTPHeaderField: "Accept")
 		if let credentials = self.credentials() {
 			request?.setValue("Discogs key=\(credentials.key), secret=\(credentials.secret)", forHTTPHeaderField: "Authorization")
 		}

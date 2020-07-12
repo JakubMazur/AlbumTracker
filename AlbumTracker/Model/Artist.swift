@@ -8,8 +8,6 @@
 import Foundation
 
 final class Artist: ObservableObject, Decodable, API {
-	private static let myArtistID: Int = 59792
-	static var endpoint: Endpoint = .artist(myArtistID)
 	
 	let id: UInt
 	let name: String
@@ -25,11 +23,15 @@ final class Artist: ObservableObject, Decodable, API {
 		self.images = images
 	}
 	
+	lazy var primaryImage: APIImage? = {
+		self.images.filter { $0.imageType == .primary }.first
+	}()
+	
 	enum CodingKeys: String, CodingKey {
 		case id
 		case name
 		case realName = "realname"
-		case profile
+		case profile = "profile_plaintext"
 		case images
 	}
 	
@@ -45,5 +47,5 @@ final class Artist: ObservableObject, Decodable, API {
 
 
 extension Artist {
-	static let testData: Artist = Artist(name: "Bob Dylan", id: 59792, realName: "Robert Allen Zimmerman", profile: "Born: May 24, 1941, Duluth, Minnesota, USA; singer, songwriter, \"song and dance man\".", images: APIImage.testData)
+	static let testData: Artist = Artist(name: "Bob Dylan", id: 59792, realName: "Robert Allen Zimmerman", profile: "Born: May 24, 1941, Duluth, Minnesota, USA; singer, songwriter, \"song and dance man\".", images: [APIImage].testData)
 }
