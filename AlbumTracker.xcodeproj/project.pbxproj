@@ -25,6 +25,7 @@
 		DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */; };
 		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
 		DDC3C4F424BB3F12009C5BFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */; };
+		DDC3C4F624BB5079009C5BFE /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DD5D93D024B9DD5700E45ED0 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		DD5D93D324B9DF1A00E45ED0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3CFE3C24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift */,
+				DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3CFE3B24B9DA5C0091BDA3 /* APITests.swift in Sources */,
+				DDC3C4F624BB5079009C5BFE /* URLExtensionsTests.swift in Sources */,
 				DD5D93D124B9DD5700E45ED0 /* EndpointTests.swift in Sources */,
 				DD3CFE3D24B9DAF40091BDA3 /* URLRequestExtensionsTests.swift in Sources */,
 			);
