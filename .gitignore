@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 AlbumTracker/private
+AlbumTracker.xcodeproj/xcuserdata/jakubmazur.xcuserdatad/xcschemes/xcschememanagement.plist
