@@ -10,10 +10,30 @@ import XCTest
 
 class EndpointTests: XCTestCase {
 	
-//	func testRequestCreationFromCases() {
-//		XCTAssertNotNil(Endpoint.artist(1).request)
-//		XCTAssertNotNil(Endpoint.subpath("album/example").request)
-//		XCTAssertNotNil(Endpoint.custom("https://jkmazur.pl/someSubpath").request)
-//	}
+	enum HTTPField: String, CaseIterable {
+		case userAgent = "User-Agent"
+		case accept = "Accept"
+		case auth = "Authorization"
+		
+		var expectedValues: [String] {
+			switch self {
+			case .accept: return ["plaintext+json"]
+			case .userAgent: return ["AlbumTracker", "kettu.pl"]
+			case .auth: return ["Discogs", "key", "secret"]
+			}
+		}
+	}
+	
+	func testRequestSetupHTTPFields() {
+		let artist = Endpoint.artist(1)
+		let request = try! artist.getRequest()
+		HTTPField.allCases.forEach {
+			let field = $0
+			let givenValue = request.value(forHTTPHeaderField: field.rawValue)!
+			field.expectedValues.forEach {
+				XCTAssertTrue(givenValue.contains($0))
+			}
+		}
+	}
 	
 }

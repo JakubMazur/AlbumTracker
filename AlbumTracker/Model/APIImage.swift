@@ -10,7 +10,6 @@ import UIKit
 import Combine
 
 final class APIImage: ObservableObject, Decodable, API {
-	var endpoint: Endpoint { .custom(self.resourceURL) }
 	
 	private var subscription: AnyCancellable?
 	@Published private(set) var image: UIImage?
@@ -35,7 +34,7 @@ final class APIImage: ObservableObject, Decodable, API {
 	}
 	
 	func load() {
-		guard let request = try? self.endpoint.getRequest() else { return }
+		guard let request = try? Endpoint.custom(self.resourceURL).getRequest() else { return }
 		subscription = APIImage.session.dataTaskPublisher(for: request).map { UIImage(data: $0.data) }.replaceError(with: nil).receive(on: DispatchQueue.main).assign(to: \.image, on: self)
 	}
 
