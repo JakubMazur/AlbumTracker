@@ -10,5 +10,10 @@ import XCTest
 
 class EndpointTests: XCTestCase {
 	
+//	func testRequestCreationFromCases() {
+//		XCTAssertNotNil(Endpoint.artist(1).request)
+//		XCTAssertNotNil(Endpoint.subpath("album/example").request)
+//		XCTAssertNotNil(Endpoint.custom("https://jkmazur.pl/someSubpath").request)
+//	}
 	
 }

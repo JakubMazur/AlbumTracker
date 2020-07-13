@@ -19,6 +19,7 @@ extension NSError {
 	}
 	
 	static var networkingDefault: Error { NSError(errorDescription: "Request canot be made") }
-	static var notValidEndpoint: Error { NSError(errorDescription: "Valid request to this endpoint cannot be found") }
+	static var notValidRequest: Error { NSError(errorDescription: "Valid url to this endpoint cannot be found") }
+	static var notValidURL: Error { NSError(errorDescription: "Valid request to this endpoint cannot be found") }
 	static var requestEmptyData: Error { NSError(errorDescription: "Data from the response does not contain a valid object") }
 }

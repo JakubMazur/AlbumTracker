@@ -7,43 +7,54 @@
 
 import Foundation
 
+protocol EndpointConnectable {
+	func dataTask(with endpoint: Endpoint, completionHandler: @escaping(Data?, URLResponse?, Error?) -> Void) throws -> URLSessionDataTask
+	func dataTaskPublisher(for url: URLRequest) -> URLSession.DataTaskPublisher
+}
 
 enum Endpoint {
 	case artist(Int)
-	case album(Int)
 	case subpath(String)
 	case custom(String?)
 	
 	private var relative: String? {
 		switch self {
 		case .artist(let identifier): return "/artists/\(identifier)"
-		case .album(let identifier): return "/album/\(identifier)"
 		case .subpath(let stringURLSub): return stringURLSub
 		case .custom: return nil
 		}
 	}
 	
-	private var url: URL? {
-		if let rel = self.relative {
-			return URL(string: rel, relativeTo: Networking.base)
-		} else {
-			switch self {
-			case .custom(let urlString): return URL(string: urlString)
-			default: return nil
+	private func getUrl() throws -> URL {
+		let url: URL?
+		switch self {
+		case .custom(let urlString):
+			url = URL(string: urlString)
+		default:
+			if let relative = self.relative {
+				url = URL(string: relative, relativeTo: Networking.base)
+			} else {
+				url = nil
 			}
+		}
+		if let url = url {
+			return url
+		} else {
+			throw NSError.notValidURL
 		}
 	}
 	
-	var request: URLRequest? {
-		var request = URLRequest(url: self.url)
-		request?.setValue("AlbumTracker/0.1 +https://kettu.pl", forHTTPHeaderField: "User-Agent")
-		request?.setValue("application/vnd.discogs.v2.plaintext+json", forHTTPHeaderField: "Accept")
+	func getRequest() throws -> URLRequest {
+		let url = try self.getUrl()
+		var request = URLRequest(url: url)
+		request.setValue("AlbumTracker/0.1 +https://kettu.pl", forHTTPHeaderField: "User-Agent")
+		request.setValue("application/vnd.discogs.v2.plaintext+json", forHTTPHeaderField: "Accept")
 		if let credentials = self.credentials() {
-			request?.setValue("Discogs key=\(credentials.key), secret=\(credentials.secret)", forHTTPHeaderField: "Authorization")
+			request.setValue("Discogs key=\(credentials.key), secret=\(credentials.secret)", forHTTPHeaderField: "Authorization")
 		}
 		return request
 	}
-	
+
 	private func credentials() -> APICredentials? {
 		guard let credentialFilePath = Bundle.main.path(forResource: "credentials", ofType: "json"),
 			  let data = try? Data(contentsOf: URL(fileURLWithPath: credentialFilePath)) else {
