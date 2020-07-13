@@ -8,7 +8,20 @@
 import Foundation
 @testable import AlbumTracker
 
-class DummyURLSession: NSObject {
+class DummyURLSession {
+	enum State {
+		case success
+		case failed
+	}
+	
+	let state: State
+	
+	init(state: State) {
+		self.state = state
+	}
+	
+	static let `default` = DummyURLSession(state: .success)
+	static let failed = DummyURLSession(state: .failed)
 	let simulatedNetworkConnectionDelay: TimeInterval = 0.1
 }
 
@@ -21,7 +34,12 @@ extension DummyURLSession: EndpointConnectable {
 	func dataTask(with endpoint: Endpoint, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws -> URLSessionDataTask {
 		DispatchQueue.main.asyncAfter(deadline: .now() + self.simulatedNetworkConnectionDelay) {
 			let data = self.getSuccessOutput(for: endpoint)
-			completionHandler(data,nil,nil)
+			switch self.state {
+			case .success:
+				completionHandler(data,nil,nil)
+			case .failed:
+				completionHandler(nil,nil,NSError.networkingDefault)
+			}
 		}
 		return DummyURLSessionDataTask()
 	}
