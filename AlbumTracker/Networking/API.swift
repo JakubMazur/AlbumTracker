@@ -7,16 +7,19 @@
 
 import Foundation
 
-protocol API: Decodable { }
+protocol API: Decodable {
+	static var session: EndpointConnectable { get }
+}
 
 extension API {
-	static var session: URLSession {
+	static var session: EndpointConnectable {
 		return URLSession.shared
 	}
 }
 
 extension API {
-	static func fetch(endpoint: Endpoint, _ completion: @escaping(Result<Self,Error>) -> Void)  {
+	static func fetch(endpoint: Endpoint, session: EndpointConnectable? = nil, _ completion: @escaping(Result<Self,Error>) -> Void)  {
+		let session: EndpointConnectable = session ?? Self.session
 		var completionHandler: Result<Self,Error> = .failure(NSError.networkingDefault) {
 			didSet {
 				DispatchQueue.main.async {
@@ -24,7 +27,7 @@ extension API {
 				}
 			}
 		}
-		Self.fetch(endpoint) { (result) in
+		Self.fetch(endpoint, session: session) { (result) in
 			switch result {
 			case .success(let data):
 				do {
@@ -39,7 +42,7 @@ extension API {
 		}
 	}
 	
-	static func fetch(_ endpoint: Endpoint, _ completion:@escaping(Result<Data,Error>) -> Void) {
+	private static func fetch(_ endpoint: Endpoint, session: EndpointConnectable, _ completion:@escaping(Result<Data,Error>) -> Void) {
 		var result: Result<Data,Error> = .failure(NSError.networkingDefault) {
 			didSet {
 				DispatchQueue.main.async {
@@ -47,17 +50,18 @@ extension API {
 				}
 			}
 		}
-		guard let request = endpoint.request else {
-			result = .failure(NSError.notValidEndpoint)
+		do {
+			let dataTask = try session.dataTask(with: endpoint) { (data, response, error) in
+				guard let data = data else {
+					result = .failure(NSError.requestEmptyData)
+					return
+				}
+				result = .success(data)
+			}
+			dataTask.resume()
+		} catch {
+			result = .failure(error)
 			return
 		}
-		let dataTask = self.session.dataTask(with: request) { (data, response, error) in
-			guard let data = data else {
-				result = .failure(NSError.requestEmptyData)
-				return
-			}
-			result = .success(data)
-		}
-		dataTask.resume()
 	}
 }
