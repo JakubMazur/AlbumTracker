@@ -12,14 +12,19 @@ protocol EndpointConnectable {
 	func dataTaskPublisher(for url: URLRequest) -> URLSession.DataTaskPublisher
 }
 
+
 enum Endpoint {
-	case artist(Int)
+	typealias ArtistID = UInt
+	
+	case artist(ArtistID)
+	case collection(ArtistID)
 	case subpath(String)
 	case custom(String?)
 	
 	private var relative: String? {
 		switch self {
 		case .artist(let identifier): return "/artists/\(identifier)"
+		case .collection(let identifier): return "/artists/\(identifier)/releases"
 		case .subpath(let stringURLSub): return stringURLSub
 		case .custom: return nil
 		}

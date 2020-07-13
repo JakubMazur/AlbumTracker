@@ -12,30 +12,37 @@ struct ArtistHeaderView: View {
 	
 	var body: some View {
 		if let artist = artist {
-			ZStack {
-				HStack {
-					AsyncImageView(apiImage: artist.primaryImage)
-						.clipShape(Circle())
-						.overlay(
-							Circle()
-								.stroke(Color.primary)
-						)
-					VStack(alignment: .leading) {
-						Text(artist.name)
-							.font(.title)
-							.foregroundColor(.primary)
-							.layoutPriority(1)
-						Text(artist.realName)
-							.font(.subheadline)
-							.foregroundColor(.secondary)
-							.layoutPriority(2)
-					}
-					.padding()
+			HStack(alignment: .center) {
+				AsyncImageView(apiImage: artist.primaryImage)
+					.clipShape(Circle())
+					.overlay(
+						Circle()
+							.stroke(Color.primary)
+					)
+				Spacer()
+				VStack(alignment: .leading) {
+					Text(artist.name)
+						.font(.title)
+						.foregroundColor(.primary)
+					Text(artist.realName)
+						.font(.subheadline)
+						.foregroundColor(.secondary)
 				}
-				.padding(.horizontal)
-			}.background(
-				Rectangle().fill(Color("headerBackground"))
-			)
+			}
+		}
+	}
+}
+
+struct ArtistHeaderView_Previews: PreviewProvider {
+	static var previews: some View {
+		PreviewWrapper()
+	}
+	
+	struct PreviewWrapper: View {
+		@State(initialValue: Artist.testData) var artist: Artist?
+		
+		var body: some View {
+			ArtistHeaderView(artist: $artist)
 		}
 	}
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Artist: ObservableObject, Decodable, API {
+final class Artist: Identifiable, ObservableObject, Decodable, API {
 	
 	let id: UInt
 	let name: String

@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	@State var artist: Artist?
 	@State var screenState: ScreenState = .initial
+	@State var collection: Collection?
 	
     var body: some View {
 		switch self.screenState {
@@ -18,10 +19,32 @@ struct ContentView: View {
 				self.loadArtist()
 			}.animation(.easeIn)
 		case .requestSuccesfull:
-			VStack(alignment: .leading) {
-				ArtistHeaderView(artist: $artist)
-				ArtistAboutPreviewView(artist: $artist)
-			}
+				List {
+					GroupBox {
+						ArtistHeaderView(artist: $artist).alignmentGuide(VerticalAlignment.center) { _ in 0 }
+					}.alignmentGuide(.center) { d in d[.center] }
+					Group {
+						ArtistAboutPreviewView(artist: $artist)
+					}
+					Group {
+						Text("Releases")
+							.foregroundColor(.primary)
+							.font(.headline)
+					}
+					if let releases = self.collection?.releases {
+						ForEach(releases) { release in
+							VStack(alignment: .leading) {
+								Text(release.title)
+									.font(.body)
+									.foregroundColor(.primary)
+								Text(String(release.year))
+									.font(.footnote)
+									.foregroundColor(.secondary)
+							}
+
+						}
+					}
+				}
 		case .connectionError:
 			VStack {
 				Image(systemName: "wifi.slash")
@@ -39,9 +62,22 @@ struct ContentView: View {
 			switch results {
 			case .success(let artist):
 				self.artist = artist
+				self.loadCollection(for: artist)
 				self.screenState = .requestSuccesfull
 			case .failure(_):
 				self.screenState = .connectionError
+			}
+		}
+	}
+	
+	private func loadCollection(for artist: Artist) {
+		Collection.fetch(endpoint: .collection(artist.id)) { (results) in
+			switch results {
+			case .success(let collection):
+				self.collection = collection
+			case .failure(let error):
+				#warning("Collection loading error handling")
+				print(error)
 			}
 		}
 	}
@@ -49,8 +85,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		ContentView(artist: Artist.testData, screenState: .requestSuccesfull)
-		ContentView(artist: Artist.testData, screenState: .requestSuccesfull)
+		ContentView(artist: Artist.testData, screenState: .requestSuccesfull, collection: Collection.testData)
+		ContentView(artist: Artist.testData, screenState: .requestSuccesfull, collection: Collection.testData)
 			.preferredColorScheme(.dark)
 		ContentView(artist: Artist.testData, screenState: .connectionError)
     }
