@@ -36,4 +36,16 @@ class EndpointTests: XCTestCase {
 		}
 	}
 	
+	func testCustomCase() {
+		XCTAssertNoThrow(try Endpoint.custom("https://jkmazur.pl").getRequest())
+		XCTAssertThrowsError(try Endpoint.custom(nil).getRequest())
+	}
+	
+	func testSubpath() {
+		let invalidPath = Endpoint.subpath("\\\\something")
+		XCTAssertThrowsError(try invalidPath.getRequest())
+		let validSubPath = Endpoint.subpath("/something")
+		XCTAssertNoThrow(try validSubPath.getRequest())
+	}
+	
 }
