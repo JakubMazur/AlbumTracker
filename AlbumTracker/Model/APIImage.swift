@@ -35,7 +35,7 @@ final class APIImage: ObservableObject, Decodable, API {
 	
 	func load() {
 		guard let request = try? Endpoint.custom(self.resourceURL).getRequest() else { return }
-		subscription = APIImage.session.dataTaskPublisher(for: request).map { UIImage(data: $0.data) }.replaceError(with: nil).receive(on: DispatchQueue.main).assign(to: \.image, on: self)
+		self.subscription = APIImage.session.dataTaskPublisher(for: request).map { UIImage(data: $0.data) }.replaceError(with: nil).receive(on: DispatchQueue.main).assign(to: \.image, on: self)
 	}
 
 	func cancel() {

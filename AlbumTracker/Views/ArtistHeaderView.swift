@@ -12,7 +12,7 @@ struct ArtistHeaderView: View {
 	
 	var body: some View {
 		if let artist = artist {
-			HStack(alignment: .center) {
+			HStack(alignment: .center, spacing: 8) {
 				AsyncImageView(apiImage: artist.primaryImage)
 					.clipShape(Circle())
 					.overlay(
@@ -28,7 +28,7 @@ struct ArtistHeaderView: View {
 						.font(.subheadline)
 						.foregroundColor(.secondary)
 				}
-			}
+			}.padding(.horizontal)
 		}
 	}
 }

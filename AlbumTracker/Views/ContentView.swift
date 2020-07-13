@@ -19,10 +19,9 @@ struct ContentView: View {
 				self.loadArtist()
 			}.animation(.easeIn)
 		case .requestSuccesfull:
+			NavigationView {
 				List {
-					GroupBox {
-						ArtistHeaderView(artist: $artist).alignmentGuide(VerticalAlignment.center) { _ in 0 }
-					}.alignmentGuide(.center) { d in d[.center] }
+					ArtistHeaderView(artist: $artist)
 					Group {
 						ArtistAboutPreviewView(artist: $artist)
 					}
@@ -33,18 +32,17 @@ struct ContentView: View {
 					}
 					if let releases = self.collection?.releases {
 						ForEach(releases) { release in
-							VStack(alignment: .leading) {
-								Text(release.title)
-									.font(.body)
-									.foregroundColor(.primary)
-								Text(String(release.year))
-									.font(.footnote)
-									.foregroundColor(.secondary)
+							ZStack {
+								NavigationLink(destination: Text("something")) {
+									EmptyView()
+								}
+								ReleaseCell(release: release)
 							}
-
 						}
 					}
 				}
+				.navigationBarHidden(true)
+			}
 		case .connectionError:
 			VStack {
 				Image(systemName: "wifi.slash")
