@@ -47,5 +47,5 @@ final class Artist: ObservableObject, Decodable, API {
 
 
 extension Artist {
-	static let testData: Artist = Artist(name: "Bob Dylan", id: 59792, realName: "Robert Allen Zimmerman", profile: "Born: May 24, 1941, Duluth, Minnesota, USA; singer, songwriter, \"song and dance man\".", images: [APIImage].testData)
+	static let testData: Artist = Artist(name: "Bob Dylan", id: 59792, realName: "Robert Allen Zimmerman", profile: "Born: May 24, 1941, Duluth, Minnesota, USA; singer, songwriter, \"song and dance man\".\r\nInducted into Songwriters Hall of Fame in 1982 and the Rock And Roll Hall of Fame in 1988 (Performer). Winner of the 2016 Nobel Prize in literature.\r\nHis first marriage was to Sara Dylan (November 1965 - divorced June 1977), together they have five children, including Jesse Dylan and Jakob Dylan. His second marriage was to Carolyn Dennis (4 June 1986 - divorced 7 August 1990).", images: [APIImage].testData)
 }
