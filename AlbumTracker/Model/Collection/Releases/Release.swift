@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class Release: Identifiable, ObservableObject, Decodable {
 	
@@ -27,6 +28,17 @@ final class Release: Identifiable, ObservableObject, Decodable {
 		self.stats = stats
 		self.type = type
 	}
+	
+	init(persistanceObject: ReleasePersistance) {
+		self.id = UInt(persistanceObject.releaseID) ?? 0
+		self.title = persistanceObject.title
+		#warning("Rest of properties not sync 👇")
+		self.role = .main
+		self.type = .master
+		self.year = 0
+		self.thumb = nil
+		self.stats = Stats(community: Community.random)
+	}
 }
 
 extension Release {
@@ -37,6 +49,21 @@ extension Release {
 	enum ReleaseType: String, Decodable {
 		case release
 		case master
+	}
+}
+
+@objc final class ReleasePersistance: RealmSwift.Object {
+	@objc dynamic var releaseID: String = UUID().uuidString
+	@objc dynamic var title: String = ""
+	
+	override static func primaryKey() -> String? {
+		return "releaseID"
+	}
+	
+	convenience init(release: Release) {
+		self.init()
+		self.releaseID = String(release.id)
+		self.title = release.title
 	}
 }
 

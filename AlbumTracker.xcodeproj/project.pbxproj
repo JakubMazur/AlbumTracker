@@ -32,8 +32,9 @@
 		DDC0F51F24BD0F0D003CAEBD /* MainReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F51E24BD0F0D003CAEBD /* MainReleaseView.swift */; };
 		DDC0F52224BDBE28003CAEBD /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F52124BDBE28003CAEBD /* CollectionTests.swift */; };
 		DDC0F52424BDBFE9003CAEBD /* ReleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F52324BDBFE9003CAEBD /* ReleaseTests.swift */; };
-        DDC0F52724BDE018003CAEBD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52624BDE018003CAEBD /* RealmSwift */; };
-        DDC0F52924BDE018003CAEBD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52824BDE018003CAEBD /* Realm */; };
+		DDC0F52724BDE018003CAEBD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52624BDE018003CAEBD /* RealmSwift */; };
+		DDC0F52924BDE018003CAEBD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52824BDE018003CAEBD /* Realm */; };
+		DDC0F53024BE33BE003CAEBD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F52F24BE33BE003CAEBD /* Database.swift */; };
 		DDC3C4F624BB5079009C5BFE /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */; };
 		DDC3C4F824BB5251009C5BFE /* ArtistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3C4F724BB5251009C5BFE /* ArtistsTests.swift */; };
 		DDC3C4FB24BB52E7009C5BFE /* dummyJSONs in Resources */ = {isa = PBXBuildFile; fileRef = DDC3C4FA24BB52E7009C5BFE /* dummyJSONs */; };
@@ -82,6 +83,7 @@
 		DDC0F51E24BD0F0D003CAEBD /* MainReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReleaseView.swift; sourceTree = "<group>"; };
 		DDC0F52124BDBE28003CAEBD /* CollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
 		DDC0F52324BDBFE9003CAEBD /* ReleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseTests.swift; sourceTree = "<group>"; };
+		DDC0F52F24BE33BE003CAEBD /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = SOURCE_ROOT; };
 		DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionsTests.swift; sourceTree = "<group>"; };
 		DDC3C4F724BB5251009C5BFE /* ArtistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsTests.swift; sourceTree = "<group>"; };
 		DDC3C4FA24BB52E7009C5BFE /* dummyJSONs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dummyJSONs; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		DD3CFE0424B9D3350091BDA3 /* AlbumTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DDC0F52F24BE33BE003CAEBD /* Database.swift */,
 				DD4F443D24B9F81200A82A1C /* private */,
 				DD3CFE3224B9D7EE0091BDA3 /* Extensions */,
 				DD5D93CF24B9DCF100E45ED0 /* Networking */,
@@ -399,6 +402,7 @@
 				DD99301A24BCC2EF0058B6F2 /* Collection.swift in Sources */,
 				DDC0F51D24BD0E3C003CAEBD /* MainRelease.swift in Sources */,
 				DDC0F51B24BCFBEC003CAEBD /* ReleaseCell.swift in Sources */,
+				DDC0F53024BE33BE003CAEBD /* Database.swift in Sources */,
 				DD4F443424B9EF2600A82A1C /* APIImage.swift in Sources */,
 				DD3CFE3824B9D8F40091BDA3 /* API.swift in Sources */,
 				DD99301324BCB2A30058B6F2 /* ArtistHeaderView.swift in Sources */,

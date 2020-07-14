@@ -53,7 +53,7 @@ struct ContentView: View {
 			case .success(let artist):
 				self.loadCollection(for: artist)
 			case .failure(_):
-				self.screenState = .connectionError
+				self.loadFromLocalStorage()
 			}
 		}
 	}
@@ -63,10 +63,30 @@ struct ContentView: View {
 			switch results {
 			case .success(let collection):
 				artist.masterReleases = collection.masterReleases
+				do {
+					try artist.save()
+				} catch {
+					#warning("saving error. For now this is not an issue since it will show other error when network will fail and database is empty")
+					print(error)
+				}
 				self.artist = artist
-			case .failure(let error):
-				self.screenState = .connectionError
+			case .failure(_):
+				self.loadFromLocalStorage()
 			}
+		}
+	}
+
+		
+	private func loadFromLocalStorage() {
+		do {
+			let fetched = try Artist.fetch()
+			guard let artist = fetched?.first else {
+				self.screenState = .connectionError
+				return
+			}
+			self.artist = artist
+		} catch {
+			self.screenState = .connectionError
 		}
 	}
 }
