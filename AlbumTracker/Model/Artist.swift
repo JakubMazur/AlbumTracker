@@ -7,15 +7,6 @@
 
 import Foundation
 
-import RealmSwift
-
-final class ArtistObject: Object {
-	dynamic var identifier: String = UUID().uuidString
-	dynamic var name: String = ""
-	dynamic var realName: String = ""
-	dynamic var profile: String = ""
-}
-
 final class Artist: Identifiable, ObservableObject, Decodable, API {
 	
 	let id: UInt
@@ -23,6 +14,7 @@ final class Artist: Identifiable, ObservableObject, Decodable, API {
 	let realName: String
 	let profile: String
 	let images: [APIImage]
+	var masterReleases: [Release]?
 	
 	private init(name: String, id: UInt, realName: String, profile: String, images: [APIImage]) {
 		self.name = name
@@ -30,6 +22,7 @@ final class Artist: Identifiable, ObservableObject, Decodable, API {
 		self.realName = realName
 		self.profile = profile
 		self.images = images
+		self.masterReleases = nil
 	}
 	
 	lazy var primaryImage: APIImage? = {
@@ -51,6 +44,7 @@ final class Artist: Identifiable, ObservableObject, Decodable, API {
 		realName = try container.decode(String.self, forKey: .realName)
 		profile = try container.decode(String.self, forKey: .profile)
 		images = try container.decode([APIImage].self, forKey: .images)
+		masterReleases = nil
 	}
 }
 

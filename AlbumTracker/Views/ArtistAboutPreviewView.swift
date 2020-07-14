@@ -25,7 +25,6 @@ struct ArtistAboutPreviewView: View {
 						.font(.headline)
 				}
 			).accentColor(.secondary)
-			.padding(.horizontal)
 		}
 	}
 }
