@@ -7,7 +7,16 @@
 
 import Foundation
 
-final class Artist: ObservableObject, Decodable, API {
+import RealmSwift
+
+final class ArtistObject: Object {
+	dynamic var identifier: String = UUID().uuidString
+	dynamic var name: String = ""
+	dynamic var realName: String = ""
+	dynamic var profile: String = ""
+}
+
+final class Artist: Identifiable, ObservableObject, Decodable, API {
 	
 	let id: UInt
 	let name: String

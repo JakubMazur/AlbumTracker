@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,21 @@
 		DD5D93D424B9DF1A00E45ED0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5D93D324B9DF1A00E45ED0 /* Artist.swift */; };
 		DD99301324BCB2A30058B6F2 /* ArtistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301224BCB2A30058B6F2 /* ArtistHeaderView.swift */; };
 		DD99301624BCB2FF0058B6F2 /* ArtistAboutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301524BCB2FF0058B6F2 /* ArtistAboutPreviewView.swift */; };
+<<<<<<< Updated upstream
 		DDC3C4F424BB3F12009C5BFE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC3C4F324BB3F12009C5BFE /* Colors.xcassets */; };
+=======
+		DD99301824BCC0570058B6F2 /* Release.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301724BCC0570058B6F2 /* Release.swift */; };
+		DD99301A24BCC2EF0058B6F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301924BCC2EF0058B6F2 /* Collection.swift */; };
+		DD99301C24BCF0FA0058B6F2 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301B24BCF0FA0058B6F2 /* Stats.swift */; };
+		DD99301E24BCF15B0058B6F2 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD99301D24BCF15B0058B6F2 /* Community.swift */; };
+		DDC0F51B24BCFBEC003CAEBD /* ReleaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F51A24BCFBEC003CAEBD /* ReleaseCell.swift */; };
+		DDC0F51D24BD0E3C003CAEBD /* MainRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F51C24BD0E3C003CAEBD /* MainRelease.swift */; };
+		DDC0F51F24BD0F0D003CAEBD /* MainReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F51E24BD0F0D003CAEBD /* MainReleaseView.swift */; };
+		DDC0F52224BDBE28003CAEBD /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F52124BDBE28003CAEBD /* CollectionTests.swift */; };
+		DDC0F52424BDBFE9003CAEBD /* ReleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0F52324BDBFE9003CAEBD /* ReleaseTests.swift */; };
+		DDC0F52724BDE018003CAEBD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52624BDE018003CAEBD /* RealmSwift */; };
+		DDC0F52924BDE018003CAEBD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DDC0F52824BDE018003CAEBD /* Realm */; };
+>>>>>>> Stashed changes
 		DDC3C4F624BB5079009C5BFE /* URLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3C4F524BB5079009C5BFE /* URLExtensionsTests.swift */; };
 		DDC3C4F824BB5251009C5BFE /* ArtistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC3C4F724BB5251009C5BFE /* ArtistsTests.swift */; };
 		DDC3C4FB24BB52E7009C5BFE /* dummyJSONs in Resources */ = {isa = PBXBuildFile; fileRef = DDC3C4FA24BB52E7009C5BFE /* dummyJSONs */; };
@@ -76,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC0F52924BDE018003CAEBD /* Realm in Frameworks */,
+				DDC0F52724BDE018003CAEBD /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +259,8 @@
 			);
 			name = AlbumTracker;
 			packageProductDependencies = (
+				DDC0F52624BDE018003CAEBD /* RealmSwift */,
+				DDC0F52824BDE018003CAEBD /* Realm */,
 			);
 			productName = AlbumTracker;
 			productReference = DD3CFE0224B9D3350091BDA3 /* AlbumTracker.app */;
@@ -295,6 +313,7 @@
 			);
 			mainGroup = DD3CFDF924B9D3350091BDA3;
 			packageReferences = (
+				DDC0F52524BDE018003CAEBD /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = DD3CFE0324B9D3350091BDA3 /* Products */;
 			projectDirPath = "";
@@ -613,6 +632,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDC0F52524BDE018003CAEBD /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDC0F52624BDE018003CAEBD /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC0F52524BDE018003CAEBD /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		DDC0F52824BDE018003CAEBD /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDC0F52524BDE018003CAEBD /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD3CFDFA24B9D3350091BDA3 /* Project object */;
 }
