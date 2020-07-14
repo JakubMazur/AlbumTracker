@@ -11,29 +11,33 @@ struct ReleaseCell: View {
 	var release: Release
 	
 	var body: some View {
-		GroupBox {
-			HStack(spacing: 8) {
-				AsyncImageView(apiImage: release.thumbImage)
-					.cornerRadius(4)
-					.frame(width: 48, height: 48)
-				VStack(alignment: .leading, spacing: 4) {
-					Text(release.title)
-						.font(.body)
-						.foregroundColor(.primary)
-					Text(String(release.year))
-						.font(.footnote)
-						.foregroundColor(.secondary)
+		NavigationLink(destination:
+						MainReleaseView(identifier: release.id)
+		){
+			GroupBox {
+				HStack(spacing: 8) {
+					AsyncImageView(apiImage: release.thumbImage)
+						.cornerRadius(4)
+						.frame(width: 48, height: 48)
+					VStack(alignment: .leading, spacing: 4) {
+						Text(release.title)
+							.font(.body)
+							.foregroundColor(.primary)
+						Text(String(release.year))
+							.font(.footnote)
+							.foregroundColor(.secondary)
+					}
+					Spacer()
 				}
-				Spacer()
-			}
-			HStack(alignment: .bottom) {
-				Spacer()
-				Text(String(release.stats.community.have))
-					.font(.footnote)
-				Image(systemName: "bag.fill")
-				Text(String(release.stats.community.want))
-					.font(.footnote)
-				Image(systemName: "cart")
+				HStack(alignment: .bottom) {
+					Spacer()
+					Text(String(release.stats.community.have))
+						.font(.footnote)
+					Image(systemName: "bag.fill")
+					Text(String(release.stats.community.want))
+						.font(.footnote)
+					Image(systemName: "cart")
+				}
 			}
 		}
 	}
