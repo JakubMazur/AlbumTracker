@@ -56,6 +56,8 @@ extension Endpoint {
 	var dummyResponseFileName: String {
 		switch self {
 		case .artist: return "artist"
+		case .collection: return "collection"
+		case .release: return "release"
 		case .custom, .subpath: return ""
 		}
 	}
