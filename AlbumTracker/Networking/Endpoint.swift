@@ -15,9 +15,11 @@ protocol EndpointConnectable {
 
 enum Endpoint {
 	typealias ArtistID = UInt
+	typealias ReleaseID = UInt
 	
 	case artist(ArtistID)
 	case collection(ArtistID)
+	case release(ReleaseID)
 	case subpath(String)
 	case custom(String?)
 	
@@ -25,6 +27,7 @@ enum Endpoint {
 		switch self {
 		case .artist(let identifier): return "/artists/\(identifier)"
 		case .collection(let identifier): return "/artists/\(identifier)/releases"
+		case .release(let identifier): return "/masters/\(identifier)"
 		case .subpath(let stringURLSub): return stringURLSub
 		case .custom: return nil
 		}

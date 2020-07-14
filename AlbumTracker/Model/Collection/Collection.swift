@@ -13,6 +13,10 @@ final class Collection: ObservableObject, Decodable, API {
 	init(releases: [Release]) {
 		self.releases = releases
 	}
+	
+	var masterReleases: [Release] {
+		self.releases.filter { $0.type == .master }
+	}
 }
 
 extension Collection {

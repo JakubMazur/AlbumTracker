@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-final class APIImage: ObservableObject, Decodable, API {
+final class APIImage: Identifiable, ObservableObject, Decodable, API {
 	
 	private var subscription: AnyCancellable?
 	@Published private(set) var image: UIImage?

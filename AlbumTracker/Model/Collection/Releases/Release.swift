@@ -12,24 +12,31 @@ final class Release: Identifiable, ObservableObject, Decodable {
 	let id: UInt
 	let title: String
 	let role: Role
+	let type: ReleaseType
 	let year: UInt
 	private let thumb: String?
 	let stats: Stats
 	lazy var thumbImage: APIImage = APIImage(imageType: .primary, resourceURL: self.thumb)
 	
-	init(id: UInt, title: String, role: Role, year: UInt, thumb: String? = nil, stats: Stats = Stats.random) {
+	init(id: UInt, title: String, role: Role, year: UInt, thumb: String? = nil, stats: Stats = Stats.random, type: ReleaseType = .master) {
 		self.id = id
 		self.title = title
 		self.role = role
 		self.year = year
 		self.thumb = thumb
 		self.stats = stats
+		self.type = type
 	}
 }
 
 extension Release {
 	enum Role: String, Decodable {
 		case main = "Main"
+	}
+	
+	enum ReleaseType: String, Decodable {
+		case release
+		case master
 	}
 }
 

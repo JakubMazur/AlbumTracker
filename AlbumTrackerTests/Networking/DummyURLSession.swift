@@ -57,6 +57,7 @@ extension Endpoint {
 		switch self {
 		case .artist: return "artist"
 		case .collection: return "collection"
+		case .release: return "release"
 		case .custom, .subpath: return ""
 		}
 	}

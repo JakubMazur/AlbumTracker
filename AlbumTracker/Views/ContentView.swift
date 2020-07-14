@@ -9,16 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
 	@State var artist: Artist?
-	@State var screenState: ScreenState = .initial
-	@State var collection: Collection?
+	@State var screenState: ScreenState = .sucessfull
 	
     var body: some View {
 		switch self.screenState {
-		case .initial:
-			ProgressView().onAppear {
-				self.loadArtist()
-			}.animation(.easeIn)
-		case .requestSuccesfull:
+		case .sucessfull:
 			NavigationView {
 				List {
 					ArtistHeaderView(artist: $artist)
@@ -30,18 +25,15 @@ struct ContentView: View {
 							.foregroundColor(.primary)
 							.font(.headline)
 					}
-					if let releases = self.collection?.releases {
+					if let releases = self.artist?.masterReleases {
 						ForEach(releases) { release in
-							ZStack {
-								NavigationLink(destination: Text("something")) {
-									EmptyView()
-								}
-								ReleaseCell(release: release)
-							}
+							ReleaseCell(release: release)
 						}
 					}
 				}
 				.navigationBarHidden(true)
+			}.onAppear {
+				self.loadArtist()
 			}
 		case .connectionError:
 			VStack {
@@ -59,9 +51,7 @@ struct ContentView: View {
 		Artist.fetch(endpoint: .artist(59792)) { (results) in
 			switch results {
 			case .success(let artist):
-				self.artist = artist
 				self.loadCollection(for: artist)
-				self.screenState = .requestSuccesfull
 			case .failure(_):
 				self.screenState = .connectionError
 			}
@@ -72,10 +62,10 @@ struct ContentView: View {
 		Collection.fetch(endpoint: .collection(artist.id)) { (results) in
 			switch results {
 			case .success(let collection):
-				self.collection = collection
+				artist.masterReleases = collection.masterReleases
+				self.artist = artist
 			case .failure(let error):
-				#warning("Collection loading error handling")
-				print(error)
+				self.screenState = .connectionError
 			}
 		}
 	}
@@ -83,8 +73,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		ContentView(artist: Artist.testData, screenState: .requestSuccesfull, collection: Collection.testData)
-		ContentView(artist: Artist.testData, screenState: .requestSuccesfull, collection: Collection.testData)
+		ContentView(artist: Artist.testData, screenState: .sucessfull)
+		ContentView(artist: Artist.testData, screenState: .sucessfull)
 			.preferredColorScheme(.dark)
 		ContentView(artist: Artist.testData, screenState: .connectionError)
     }
@@ -92,8 +82,7 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView {
 	enum ScreenState {
-		case initial
-		case requestSuccesfull
+		case sucessfull
 		case connectionError
 	}
 }
