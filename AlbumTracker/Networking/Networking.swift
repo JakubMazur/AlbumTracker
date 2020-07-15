@@ -10,7 +10,7 @@ import Foundation
 struct Networking {
 	typealias NetworkResult<T> = (Result<T,Error>)
 	
-	static let base: URL = URL(string: "https://api.discodsadsags.com/")!
+	static let base: URL = URL(string: "https://api.discogs.com/")!
 }
 
 extension NSError {
